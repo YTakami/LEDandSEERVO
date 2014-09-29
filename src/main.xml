@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<program xmlns="http://www.kinoma.com/kpr/1">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- ASSETS -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <skin id="MainSkin" color="#F0F0F0" />
+    <skin id="ButtonSkin" color="#707070" />
+    <skin id="ButtonSkinPressed" color="#4E4E4E" />
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- STYLES -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <style id="ButtonStyle" color="white"
+        font="bold 50px Helvetica, sans-serif" />
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- LAYOUTS -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <container id="button1" top="0" left="0" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkinPressed;
+                    
+                    if ( ledState[0] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[0] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff1"));	               
+                	} else {
+                	ledState[0] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn1"));
+                	}
+                                 container.skin = ButtonSkinPressed; 
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button2" top="0" left="30" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                        if ( ledState[1] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[1] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff2"));	               
+                	} else {
+                	ledState[1] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn2"));
+                	}                   
+                    	                    container.skin = ButtonSkinPressed;
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                   	           container.skin = ButtonSkin;           
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button3" top="0" left="60" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                        if ( ledState[2] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[2] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff3"));	               
+                	} else {
+                	ledState[2] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn3"));
+                	}                  
+                    	                    container.skin = ButtonSkinPressed;
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                                         container.skin = ButtonSkin;
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button4" top="0" left="90" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                        if ( ledState[3] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			application.invoke(new MessageWithObject("pins:/light/turnOff4"));
+            			ledState[3] = false;               
+                	} else {
+            			application.invoke(new MessageWithObject("pins:/light/turnOn4"));
+            			ledState[3] = true;
+                	}                    
+                    	   container.skin = ButtonSkinPressed;                 
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                      container.skin = ButtonSkin;
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button5" top="0" left="120" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                        if ( ledState[4] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[4] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff5"));	               
+                	} else {
+                	ledState[4] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn5"));
+                	}                   
+                    	   container.skin = ButtonSkinPressed;                 
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button6" top="0" left="150" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                        if ( ledState[5] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[5] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff6"));	               
+                	} else {
+                	ledState[5] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn6"));
+                	}           
+                	 container.skin = ButtonSkinPressed;        
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[	
+            container.skin = ButtonSkin;                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button7" top="0" left="180" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[6] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[6] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff7"));	               
+                	} else {
+                	ledState[6] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn7"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button8" top="0" left="210" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[7] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[7] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff8"));	               
+                	} else {
+                	ledState[7] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn8"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button9" top="30" left="0" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[8] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[8] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff9"));	               
+                	} else {
+                	ledState[8] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn9"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button10" top="30" left="30" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[9] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[9] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff10"));	               
+                	} else {
+                	ledState[9] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn10"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button11" top="30" left="60" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[10] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[10] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff11"));	               
+                	} else {
+                	ledState[10] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn11"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button12" top="30" left="90" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[11] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[11] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff12"));	               
+                	} else {
+                	ledState[11] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn12"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button13" top="30" left="120" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[12] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[12] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff13"));	               
+                	} else {
+                	ledState[12] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn13"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button14" top="30" left="150" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[13] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[13] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff14"));	               
+                	} else {
+                	ledState[13] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn14"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button15" top="30" left="180" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                                if ( ledState[14] ) {
+                    	//sends new message to light object's 'turnOff' method.
+            			ledState[14] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff15"));	               
+                	} else {
+                	ledState[14] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn15"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+    <container id="button16" top="30" left="210" width="30"
+        height="30" skin="ButtonSkin" active="true">
+        <behavior>
+            <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                    if ( ledState[15] ) {
+                    	//sends new message to light object's 'turnOff' method.
+                    	ledState[15] = false;
+            			application.invoke(new MessageWithObject("pins:/light/turnOff16"));	               
+                	} else {
+                	ledState[15] = true;
+            			application.invoke(new MessageWithObject("pins:/light/turnOn16"));
+                	}
+                    container.skin = ButtonSkinPressed;                    
+                    	                    
+                ]]></method>
+            <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                    container.skin = ButtonSkin;	                      
+                ]]></method>
+        </behavior>
+    </container>
+
+    <container id="MainContainer" top="0" left="0" bottom="0"
+        right="0" skin="MainSkin" style="ButtonStyle">
+        <container top="80" left="80" bottom="80" right="80"
+            skin="ButtonSkin" active="true">
+            <label top="0" left="0" bottom="0" right="0" string="'rotate'" />
+            <behavior>
+                <method id="onTouchBegan" params="container, id, x, y, ticks"><![CDATA[
+                    //sends new message to motor object's 'rotate' method.
+           			application.invoke(new MessageWithObject("pins:/motor/rotate"));	         
+                    container.skin = ButtonSkinPressed;
+                ]]></method>
+                <method id="onTouchEnded" params="container, id, x, y, ticks"><![CDATA[
+                	application.invoke(new MessageWithObject("pins:/motor/stop"));	         
+                	container.skin = ButtonSkin;
+                ]]></method>
+            </behavior>
+        </container>
+    </container>
+
+    <script>
+        <![CDATA[
+        
+        var ledstate = [];
+        for(var i=0;i<16;i++) ledstate[i] = false; 
+        
+        application.invoke( new MessageWithObject( "pins:configure", {
+	    	motor: {
+	            require: "servo",
+	            pins: {
+	                servo: { pin: 28 }
+	            }
+	        }
+	    }));
+            application.invoke(new MessageWithObject( "pins:configure", {
+		    light: {
+		        require: "led",
+		        pins: {
+		        led1: {pin: 4},
+		        led2: {pin: 6},
+		        led3: {pin: 8},
+		        led4: {pin: 10},
+		        led5: {pin: 12},
+		        led6: {pin: 16},
+		        led7: {pin: 18},
+		        led8: {pin: 20},
+		        led9: {pin: 22},
+		        led10: {pin: 24},
+		        led11: {pin: 3},
+		        led12: {pin: 5},
+		        led13: {pin: 7},
+		        led14: {pin: 9},
+		        led15: {pin: 11},
+		        led16: {pin: 15}
+		        }
+		    }
+		}));
+		
+		
+		
+		
+        ]]>
+    </script>
+</program>
